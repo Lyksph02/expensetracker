@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: rgb(112, 106, 106);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  margin: 20px auto;
+  width: 350px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Header */
+h2 {
+  padding: 2%;
+  letter-spacing: 8px;
+  text-align: center;
+  font-weight: bolder;
 }
+
+/* Balance */
+#balance {
+  color: rgb(35, 35, 243);
+}
+
+/* IncomeExpenses */
+.inc-exp {
+  border-radius: 8px;
+  background-color: rgb(228, 226, 135);
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.inc-exp > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp > div:first-of-type {
+  border-right: 1px solid #9e9a9a;
+}
+
+h4 {
+  color: black;
+}
+
+.incomeAdd {
+  color: rgb(37, 182, 37);
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.incomeSub {
+  color: rgb(236, 46, 46);
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Transaction */
+.listTransact {
+  list-style-type: none;
+  margin-bottom: 50px;
+}
+
+.listTransact li {
+  background-color: #fff;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+.listTransact li.plus {
+  border-right: 5px solid #2ecc71;
+}
+
+.listTransact li.transactMinus {
+  border-right: 8px solid #c0392b;
+}
+
+.deleteBtn {
+  cursor: pointer;
+  background-color: red;
+  border: black;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.listTransact li:hover .delete-btn {
+  opacity: 1;
+}
+
+/* AddTransact */
+.amountDesc {
+  font-style: italic;
+  font-size: small;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: 1px black;
+  border-radius: 8px;
+  display: block;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+/* Add Btn */
+.btn {
+  cursor: pointer;
+  background-color: rgb(35, 35, 243);
+  border: 1px rgb(35, 35, 243);
+  border-radius: 8px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 8px;
+  width: 100%;
+}
+
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
+}
+
+
